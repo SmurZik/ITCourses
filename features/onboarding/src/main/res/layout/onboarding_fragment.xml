@@ -34,9 +34,9 @@
             style="@style/BlurViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
             android:background="@drawable/shape_rounded_tags"
             app:blurOverlayColor="#32333A4D"
-            android:layout_marginStart="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -309,12 +309,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <android.widget.Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/shape_rounded_button_next"
+        android:backgroundTint="#12B956"
         android:fontFamily="@font/roboto_medium"
         android:text="Продолжить"
         android:textAllCaps="false"

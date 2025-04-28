@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.smurzik.onboarding.R
 import com.smurzik.onboarding.databinding.OnboardingFragmentBinding
 import eightbitlab.com.blurview.BlurView
 
