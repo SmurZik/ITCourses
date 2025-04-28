@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TagStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:paddingVertical">20dp</item>
+        <item name="android:textColor">#F2F2F3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="GreenTagStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@drawable/shape_rounded_green_tag</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:paddingVertical">20dp</item>
+        <item name="android:textColor">#F2F2F3</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginHorizontal">4dp</item>
+        <item name="android:layout_marginVertical">8dp</item>
+    </style>
+
+    <style name="SmallPaddingTagStyle" parent="TagStyle">
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">16dp</item>
+    </style>
+
+    <style name="BlurViewStyle">
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:layout_marginVertical">8dp</item>
+    </style>
+</resources>

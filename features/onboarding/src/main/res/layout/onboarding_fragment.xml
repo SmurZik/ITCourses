@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151515">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_horizontal"
+        android:text="Тысячи курсов\nв одном месте"
+        android:textColor="#F2F2F3"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="538dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView">
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag1"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            android:layout_marginStart="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1С Администрирование" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <TextView
+            android:id="@+id/tag2"
+            style="@style/GreenTagStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-15"
+            android:text="RabbitMQ"
+            android:translationY="8dp"
+            app:layout_constraintStart_toEndOf="@id/tag1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tag9"
+            style="@style/GreenTagStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="15"
+            android:text="Big Data"
+            android:translationY="-8dp"
+            app:layout_constraintStart_toEndOf="@id/tag8"
+            app:layout_constraintTop_toBottomOf="@id/tag4" />
+
+        <TextView
+            android:id="@+id/tag15"
+            style="@style/GreenTagStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-15"
+            android:text="Three.js"
+            android:translationY="-8dp"
+            app:layout_constraintStart_toEndOf="@id/tag14"
+            app:layout_constraintTop_toBottomOf="@id/tag10" />
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag3"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@+id/tag2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Трафик" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag4"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tag1">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Контент маркетинг" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag5"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag4"
+            app:layout_constraintTop_toBottomOf="@id/tag1">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B2B маркетинг" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag6"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag5"
+            app:layout_constraintTop_toBottomOf="@id/tag1">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google Аналитика" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag7"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tag4">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UX исследователь" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag8"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag7"
+            app:layout_constraintTop_toBottomOf="@id/tag4">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Веб-аналитика" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag10"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tag7">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Геймдизайн" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag11"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag10"
+            app:layout_constraintTop_toBottomOf="@id/tag7">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:text="Веб-дизайн" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag12"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag11"
+            app:layout_constraintTop_toBottomOf="@id/tag7">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:text="Cinema 4D" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag13"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag12"
+            app:layout_constraintTop_toBottomOf="@id/tag7">
+
+            <TextView
+                style="@style/SmallPaddingTagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:text="Промпт инженеринг" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag14"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tag10">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Webflow" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag16"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag15"
+            app:layout_constraintTop_toBottomOf="@id/tag12">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Парсинг" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/tag17"
+            style="@style/BlurViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_rounded_tags"
+            app:blurOverlayColor="#32333A4D"
+            app:layout_constraintStart_toEndOf="@id/tag16"
+            app:layout_constraintTop_toBottomOf="@+id/tag12">
+
+            <TextView
+                style="@style/TagStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Python-разработка" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/shape_rounded_button_next"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Продолжить"
+        android:textAllCaps="false"
+        android:textColor="#F2F2F3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
