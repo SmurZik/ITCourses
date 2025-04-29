@@ -24,3 +24,5 @@ rootProject.name = "ITCourses"
 include(":app")
 include(":features:onboarding")
 include(":features:login")
+include(":features:main")
+include(":features:home")

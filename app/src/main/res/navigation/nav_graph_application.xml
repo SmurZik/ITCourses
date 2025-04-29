@@ -5,8 +5,16 @@
     app:startDestination="@id/onboardingFragment">
 
     <include app:graph="@navigation/login_graph" />
+    <include app:graph="@navigation/nav_graph_bottom" />
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.smurzik.onboarding.presentation.OnboardingFragment"
         android:label="OnboardingFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.smurzik.main.MainFragment"
+        android:label="MainFragment">
+        <deepLink app:uri="app://bottom_navigation" />
+
+    </fragment>
 </navigation>
