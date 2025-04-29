@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import com.smurzik.onboarding.R
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import com.smurzik.onboarding.databinding.OnboardingFragmentBinding
 import eightbitlab.com.blurview.BlurView
 
@@ -42,6 +43,13 @@ class OnboardingFragment : Fragment() {
         setBlur(binding.main, binding.tag14)
         setBlur(binding.main, binding.tag16)
         setBlur(binding.main, binding.tag17)
+
+        binding.continueButton.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("app://login_fragment".toUri())
+                .build()
+            findNavController().navigate(request)
+        }
     }
 
     private fun setBlur(root: ConstraintLayout, tag: BlurView) {

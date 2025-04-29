@@ -50,4 +50,5 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(project(":features:onboarding"))
+    implementation(project(":features:login"))
 }

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.smurzik.onboarding"
+    namespace = "com.smurzik.login"
     compileSdk = 35
 
     defaultConfig {
@@ -40,10 +40,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
-    implementation(libs.blurview)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 

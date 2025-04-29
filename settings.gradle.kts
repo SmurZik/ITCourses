@@ -23,4 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "ITCourses"
 include(":app")
 include(":features:onboarding")
-include(":features:test")
+include(":features:login")
