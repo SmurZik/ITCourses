@@ -2,8 +2,9 @@
 agp = "8.6.1"
 blurLayout = "1.1.1"
 blurview = "version-2.0.6"
-kotlin = "1.9.0"
-coreKtx = "1.15.0"
+hiltAndroid = "2.56.1"
+kotlin = "2.1.20"
+coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -19,6 +20,8 @@ androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fr
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 blur-layout = { module = "com.avito.android:blur-layout", version.ref = "blurLayout" }
 blurview = { module = "com.github.Dimezis:BlurView", version.ref = "blurview" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

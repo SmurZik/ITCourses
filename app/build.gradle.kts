@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -51,4 +53,7 @@ dependencies {
 
     implementation(project(":features:onboarding"))
     implementation(project(":features:login"))
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
 }
