@@ -10,6 +10,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.smurzik.login.databinding.LoginFragmentBinding
 
@@ -51,10 +52,13 @@ class LoginFragment : Fragment() {
 
         loginViewModel.validInputsLiveData.observe(viewLifecycleOwner) {
             if (it) {
+                val navOptions = NavOptions.Builder()
+                    .setPopUpTo(findNavController().graph.startDestinationId, inclusive = true)
+                    .build()
                 val request = NavDeepLinkRequest.Builder
                     .fromUri("app://bottom_navigation".toUri())
                     .build()
-                findNavController().navigate(request)
+                findNavController().navigate(request, navOptions)
             }
         }
     }
