@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class LoginViewModel: ViewModel() {
+class LoginViewModel : ViewModel() {
 
     private val _validInputsLiveData = MutableLiveData(false)
     val validInputsLiveData: LiveData<Boolean> = _validInputsLiveData
