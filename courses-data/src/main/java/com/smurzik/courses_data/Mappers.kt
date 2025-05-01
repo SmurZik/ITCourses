@@ -4,7 +4,7 @@ import com.smurzik.courses_api.CourseCloud
 import com.smurzik.courses_data.model.CourseData
 
 internal fun CourseCloud.toCourseData(): CourseData {
-    CourseData(
+    return CourseData(
         this.id,
         this.title,
         this.text,

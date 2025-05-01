@@ -1,7 +1,7 @@
 package com.smurzik.courses_api
 
 data class CoursesCloud(
-    val course: List<CourseCloud>
+    val courses: List<CourseCloud>
 )
 
 data class CourseCloud(

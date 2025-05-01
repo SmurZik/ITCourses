@@ -54,6 +54,10 @@ dependencies {
     implementation(project(":features:onboarding"))
     implementation(project(":features:login"))
     implementation(project(":features:main"))
+    implementation(project(":features:home"))
+
+    implementation(project(":courses-api"))
+    implementation(project(":courses-data"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)

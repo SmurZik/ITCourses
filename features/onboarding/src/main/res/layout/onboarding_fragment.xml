@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@+id/tag2"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -103,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tag1">
 
@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag4"
             app:layout_constraintTop_toBottomOf="@id/tag1">
 
@@ -137,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag5"
             app:layout_constraintTop_toBottomOf="@id/tag1">
 
@@ -153,9 +153,9 @@
             style="@style/BlurViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="42dp"
+            android:layout_marginStart="48dp"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tag4">
 
@@ -172,7 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag7"
             app:layout_constraintTop_toBottomOf="@id/tag4">
 
@@ -189,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tag7">
 
@@ -206,7 +206,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag10"
             app:layout_constraintTop_toBottomOf="@id/tag7">
 
@@ -224,7 +224,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag11"
             app:layout_constraintTop_toBottomOf="@id/tag7">
 
@@ -242,7 +242,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag12"
             app:layout_constraintTop_toBottomOf="@id/tag7">
 
@@ -261,7 +261,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tag10">
 
@@ -278,7 +278,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag15"
             app:layout_constraintTop_toBottomOf="@id/tag12">
 
@@ -296,7 +296,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/shape_rounded_tags"
-            app:blurOverlayColor="#32333A4D"
+            app:blurOverlayColor="#4D32333A"
             app:layout_constraintStart_toEndOf="@id/tag16"
             app:layout_constraintTop_toBottomOf="@+id/tag12">
 

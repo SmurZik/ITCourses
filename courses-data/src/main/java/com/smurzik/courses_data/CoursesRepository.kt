@@ -7,6 +7,6 @@ class CoursesRepository(
     private val api: CoursesApi
 ) {
     suspend fun getCourses(): List<CourseData> {
-        return api.getCourses().course.map { it.toCourseData() }
+        return api.getCourses().courses.map { it.toCourseData() }
     }
 }
