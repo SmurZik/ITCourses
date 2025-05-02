@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 internal fun CourseData.toCourse(): Course {
+
     val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
     val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy", Locale("ru"))
     val startDate = LocalDate.parse(this.startDate, inputFormatter)
@@ -14,6 +15,9 @@ internal fun CourseData.toCourse(): Course {
     val parts = tempStartDate.split(" ")
     val capitalizeMonth = parts[1].replaceFirstChar { it.titlecaseChar() }
     val formattedStartDate = "${parts[0]} $capitalizeMonth ${parts[2]}"
+
+    val publishDate = LocalDate.parse(this.publishDate, inputFormatter)
+
     return Course(
         this.id,
         this.title,
@@ -22,6 +26,6 @@ internal fun CourseData.toCourse(): Course {
         this.rate,
         formattedStartDate,
         this.hasLike,
-        this.publishDate
+        publishDate
     )
 }

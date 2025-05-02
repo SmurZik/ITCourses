@@ -8,6 +8,6 @@ class GetCoursesUseCase(
 ) {
 
     suspend operator fun invoke(): List<Course> {
-        return repository.getCourses().map { it.toCourse() }
+        return repository.getCourses().map { it.toCourse() }.sortedByDescending { it.publishDate }
     }
 }

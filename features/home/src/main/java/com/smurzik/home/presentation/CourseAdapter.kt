@@ -1,46 +1,38 @@
 package com.smurzik.home.presentation
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
+import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.smurzik.home.R
 import com.smurzik.home.databinding.ListItemBinding
 import com.smurzik.home.domain.model.Course
 
-class CourseAdapter : RecyclerView.Adapter<CourseViewHolder>() {
-
-    private val courseList = mutableListOf<Course>()
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        return CourseViewHolder(
-            ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        )
-    }
-
-    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        holder.bind(courseList[position])
-    }
-
-    override fun getItemCount() = courseList.size
-
-    fun submitList(source: List<Course>) {
-        val diffUtil = DiffUtilCallback(courseList, source)
-        val diff = DiffUtil.calculateDiff(diffUtil)
-        courseList.clear()
-        courseList.addAll(source)
-        diff.dispatchUpdatesTo(this)
+class CourseAdapter : AsyncListDifferDelegationAdapter<Course>(
+    DiffUtilCallback()
+) {
+    init {
+        delegatesManager.addDelegate(courseAdapterDelegate())
     }
 }
 
-class CourseViewHolder(
-    private val binding: ListItemBinding
-) : RecyclerView.ViewHolder(binding.root) {
-
-    fun bind(item: Course) {
-        Glide.with(binding.root).load(R.drawable.cover).into(binding.coverImageView)
+fun courseAdapterDelegate() = adapterDelegateViewBinding<Course, Course, ListItemBinding>(
+    viewBinding = { layoutInflater, parent ->
+        ListItemBinding.inflate(
+            layoutInflater,
+            parent,
+            false
+        )
+    }
+) {
+    bind {
+        val cover = when (item.id % 3) {
+            1 -> R.drawable.cover
+            2 -> R.drawable.cover1
+            else -> R.drawable.cover2
+        }
+        Glide.with(binding.root).load(cover).into(binding.coverImageView)
         binding.ratingTextView.text = item.rate
         binding.dateTextView.text = item.startDate
         binding.titleTextView.text = item.title
@@ -58,22 +50,18 @@ class CourseViewHolder(
         binding.dataBlurLayout.setupWith(binding.root).setBlurRadius(20f)
         binding.dataBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
         binding.dataBlurLayout.clipToOutline = true
+
+        if (item.hasLike) binding.favoriteImageView.setImageResource(R.drawable.ic_favorite_fill)
     }
 }
 
-class DiffUtilCallback(
-    private val oldList: List<Course>,
-    private val newList: List<Course>
-) : DiffUtil.Callback() {
-    override fun getOldListSize() = oldList.size
+class DiffUtilCallback : DiffUtil.ItemCallback<Course>() {
 
-    override fun getNewListSize() = newList.size
-
-    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition].id == newList[newItemPosition].id
+    override fun areItemsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition] == newList[newItemPosition]
+    override fun areContentsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem == newItem
     }
 }
