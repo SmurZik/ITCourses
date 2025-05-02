@@ -10,8 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core-ui" />
             <option value="$PROJECT_DIR$/courses-api" />
             <option value="$PROJECT_DIR$/courses-data" />
+            <option value="$PROJECT_DIR$/courses-database" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/favorite" />
             <option value="$PROJECT_DIR$/features/home" />
