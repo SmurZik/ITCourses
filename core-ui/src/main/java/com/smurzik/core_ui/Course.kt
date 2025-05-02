@@ -1,4 +1,4 @@
-package com.smurzik.home.domain.model
+package com.smurzik.core_ui
 
 import java.time.LocalDate
 

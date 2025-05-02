@@ -2,6 +2,7 @@ package com.smurzik.itcourses
 
 import com.smurzik.courses_api.CoursesApi
 import com.smurzik.courses_data.CoursesRepository
+import com.smurzik.favorite.domain.GetFavoritesUseCase
 import com.smurzik.home.domain.GetCoursesUseCase
 import dagger.Module
 import dagger.Provides
@@ -27,5 +28,10 @@ object AppModule {
     @Provides
     fun provideGetCoursesUseCase(repository: CoursesRepository): GetCoursesUseCase {
         return GetCoursesUseCase(repository)
+    }
+
+    @Provides
+    fun provideGetFavoritesUseCase(repository: CoursesRepository): GetFavoritesUseCase {
+        return GetFavoritesUseCase(repository)
     }
 }

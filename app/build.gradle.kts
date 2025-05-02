@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":features:login"))
     implementation(project(":features:main"))
     implementation(project(":features:home"))
+    implementation(project(":features:favorite"))
 
     implementation(project(":courses-api"))
     implementation(project(":courses-data"))

@@ -1,4 +1,4 @@
-package com.smurzik.home.domain
+package com.smurzik.favorite.domain
 
 import com.smurzik.core_ui.Course
 import com.smurzik.courses_data.model.CourseData

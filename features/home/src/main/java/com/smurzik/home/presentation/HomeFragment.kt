@@ -2,18 +2,15 @@ package com.smurzik.home.presentation
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
+import com.smurzik.core_ui.CourseAdapter
 import com.smurzik.home.R
 import com.smurzik.home.databinding.HomeFragmentBinding
-import com.smurzik.home.domain.model.Course
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +19,7 @@ class HomeFragment : Fragment() {
     private var _binding: HomeFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var adapter: AsyncListDifferDelegationAdapter<Course>
+    private lateinit var adapter: CourseAdapter
     private lateinit var observer: RecyclerView.AdapterDataObserver
 
     private val viewModel: HomeViewModel by viewModels()

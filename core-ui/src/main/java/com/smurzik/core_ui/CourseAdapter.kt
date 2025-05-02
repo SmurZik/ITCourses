@@ -1,13 +1,11 @@
-package com.smurzik.home.presentation
+package com.smurzik.core_ui
 
 import android.view.ViewOutlineProvider
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import com.smurzik.home.R
-import com.smurzik.home.databinding.ListItemBinding
-import com.smurzik.home.domain.model.Course
+import com.smurzik.core_ui.databinding.ListItemBinding
 
 class CourseAdapter : AsyncListDifferDelegationAdapter<Course>(
     DiffUtilCallback()

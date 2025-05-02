@@ -1,13 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = "com.smurzik.home"
-    compileSdk = 35
+    namespace = "com.smurzik.courses_database"
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -32,9 +30,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -42,23 +37,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.fragment.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-
-    implementation(project(":courses-data"))
-    implementation(project(":core-ui"))
-
-    implementation(libs.adapterdelegates4)
-    implementation(libs.adapterdelegates4.kotlin.dsl)
-    implementation(libs.adapterdelegates4.kotlin.dsl.viewbinding)
 }
