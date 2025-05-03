@@ -36,7 +36,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CourseAdapter()
+        adapter = CourseAdapter {
+            viewModel.addToFavorite(it)
+        }
         binding.recyclerView.adapter = adapter
         binding.recyclerView.addItemDecoration(
             VerticalSpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.recycler_item_spacing))

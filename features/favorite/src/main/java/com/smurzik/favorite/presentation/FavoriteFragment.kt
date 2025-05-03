@@ -34,12 +34,16 @@ class FavoriteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CourseAdapter()
+        adapter = CourseAdapter {
+            // here we can implement logic to delete course from favorite fragment
+        }
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.addItemDecoration(
             VerticalSpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.recycler_item_spacing))
         )
+
+        viewModel.getFavorite()
 
         viewModel.courseListLiveData.observe(viewLifecycleOwner) {
             adapter.items = it

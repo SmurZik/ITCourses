@@ -59,6 +59,7 @@ dependencies {
 
     implementation(project(":courses-api"))
     implementation(project(":courses-data"))
+    implementation(project(":courses-database"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)

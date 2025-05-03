@@ -37,4 +37,5 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(project(":courses-api"))
+    implementation(project(":courses-database"))
 }

@@ -7,15 +7,17 @@ import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.smurzik.core_ui.databinding.ListItemBinding
 
-class CourseAdapter : AsyncListDifferDelegationAdapter<Course>(
+class CourseAdapter(
+    onFavoriteClick: (Course) -> Unit
+) : AsyncListDifferDelegationAdapter<Course>(
     DiffUtilCallback()
 ) {
     init {
-        delegatesManager.addDelegate(courseAdapterDelegate())
+        delegatesManager.addDelegate(courseAdapterDelegate(onFavoriteClick))
     }
 }
 
-fun courseAdapterDelegate() = adapterDelegateViewBinding<Course, Course, ListItemBinding>(
+fun courseAdapterDelegate(onFavoriteClick: (Course) -> Unit) = adapterDelegateViewBinding<Course, Course, ListItemBinding>(
     viewBinding = { layoutInflater, parent ->
         ListItemBinding.inflate(
             layoutInflater,
@@ -50,6 +52,10 @@ fun courseAdapterDelegate() = adapterDelegateViewBinding<Course, Course, ListIte
         binding.dataBlurLayout.clipToOutline = true
 
         if (item.hasLike) binding.favoriteImageView.setImageResource(R.drawable.ic_favorite_fill)
+
+        binding.favoriteBlurLayout.setOnClickListener {
+            onFavoriteClick(item)
+        }
     }
 }
 

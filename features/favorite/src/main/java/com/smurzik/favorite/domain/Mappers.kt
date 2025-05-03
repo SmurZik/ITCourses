@@ -9,13 +9,6 @@ import java.util.Locale
 internal fun CourseData.toCourse(): Course {
 
     val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy", Locale("ru"))
-    val startDate = LocalDate.parse(this.startDate, inputFormatter)
-    val tempStartDate = startDate.format(outputFormatter)
-    val parts = tempStartDate.split(" ")
-    val capitalizeMonth = parts[1].replaceFirstChar { it.titlecaseChar() }
-    val formattedStartDate = "${parts[0]} $capitalizeMonth ${parts[2]}"
-
     val publishDate = LocalDate.parse(this.publishDate, inputFormatter)
 
     return Course(
@@ -24,8 +17,8 @@ internal fun CourseData.toCourse(): Course {
         this.text,
         this.price,
         this.rate,
-        formattedStartDate,
-        this.hasLike,
+        this.startDate,
+        true,
         publishDate
     )
 }

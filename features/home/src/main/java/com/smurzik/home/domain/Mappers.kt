@@ -29,3 +29,16 @@ internal fun CourseData.toCourse(): Course {
         publishDate
     )
 }
+
+internal fun Course.toCourseData(): CourseData {
+    return CourseData(
+        this.id,
+        this.title,
+        this.text,
+        this.price,
+        this.rate,
+        this.startDate,
+        this.hasLike,
+        this.publishDate.toString()
+    )
+}

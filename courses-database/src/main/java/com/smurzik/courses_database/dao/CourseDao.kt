@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface CourseDao {
 
     @Query("SELECT * FROM courses")
-    fun getFavoriteCourses(): Flow<List<CourseDBO>>
+    suspend fun getFavoriteCourses(): List<CourseDBO>
 
     @Insert
     suspend fun insert(course: CourseDBO)
