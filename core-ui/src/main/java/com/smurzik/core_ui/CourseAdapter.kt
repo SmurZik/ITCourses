@@ -17,47 +17,49 @@ class CourseAdapter(
     }
 }
 
-fun courseAdapterDelegate(onFavoriteClick: (Course) -> Unit) = adapterDelegateViewBinding<Course, Course, ListItemBinding>(
-    viewBinding = { layoutInflater, parent ->
-        ListItemBinding.inflate(
-            layoutInflater,
-            parent,
-            false
-        )
-    }
-) {
-    bind {
-        val cover = when (item.id % 3) {
-            1 -> R.drawable.cover
-            2 -> R.drawable.cover1
-            else -> R.drawable.cover2
+fun courseAdapterDelegate(onFavoriteClick: (Course) -> Unit) =
+    adapterDelegateViewBinding<Course, Course, ListItemBinding>(
+        viewBinding = { layoutInflater, parent ->
+            ListItemBinding.inflate(
+                layoutInflater,
+                parent,
+                false
+            )
         }
-        Glide.with(binding.root).load(cover).into(binding.coverImageView)
-        binding.ratingTextView.text = item.rate
-        binding.dateTextView.text = item.startDate
-        binding.titleTextView.text = item.title
-        binding.textTextView.text = item.text
-        binding.priceTextView.text = item.price
+    ) {
+        bind {
+            val cover = when (item.id % 3) {
+                1 -> R.drawable.cover
+                2 -> R.drawable.cover1
+                else -> R.drawable.cover2
+            }
+            Glide.with(binding.root).load(cover).into(binding.coverImageView)
+            binding.ratingTextView.text = item.rate
+            binding.dateTextView.text = item.startDate
+            binding.titleTextView.text = item.title
+            binding.textTextView.text = item.text
+            binding.priceTextView.text = item.price
 
-        binding.starBlurLayout.setupWith(binding.root).setBlurRadius(20f)
-        binding.starBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
-        binding.starBlurLayout.clipToOutline = true
+            binding.starBlurLayout.setupWith(binding.root).setBlurRadius(20f)
+            binding.starBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
+            binding.starBlurLayout.clipToOutline = true
 
-        binding.favoriteBlurLayout.setupWith(binding.root).setBlurRadius(20f)
-        binding.favoriteBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
-        binding.favoriteBlurLayout.clipToOutline = true
+            binding.favoriteBlurLayout.setupWith(binding.root).setBlurRadius(20f)
+            binding.favoriteBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
+            binding.favoriteBlurLayout.clipToOutline = true
 
-        binding.dataBlurLayout.setupWith(binding.root).setBlurRadius(20f)
-        binding.dataBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
-        binding.dataBlurLayout.clipToOutline = true
+            binding.dataBlurLayout.setupWith(binding.root).setBlurRadius(20f)
+            binding.dataBlurLayout.outlineProvider = (ViewOutlineProvider.BACKGROUND)
+            binding.dataBlurLayout.clipToOutline = true
 
-        if (item.hasLike) binding.favoriteImageView.setImageResource(R.drawable.ic_favorite_fill)
+            if (item.hasLike) binding.favoriteImageView.setImageResource(R.drawable.ic_favorite_fill)
+            else binding.favoriteImageView.setImageResource(R.drawable.ic_favorite)
 
-        binding.favoriteBlurLayout.setOnClickListener {
-            onFavoriteClick(item)
+            binding.favoriteBlurLayout.setOnClickListener {
+                onFavoriteClick(item)
+            }
         }
     }
-}
 
 class DiffUtilCallback : DiffUtil.ItemCallback<Course>() {
 

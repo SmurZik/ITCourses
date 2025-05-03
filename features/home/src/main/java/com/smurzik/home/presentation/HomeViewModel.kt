@@ -1,5 +1,6 @@
 package com.smurzik.home.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -53,11 +54,15 @@ internal class HomeViewModel @Inject constructor(
 
     fun addToFavorite(course: Course) {
         viewModelScope.launch(Dispatchers.IO) {
-            addToFavoriteUseCase(course)
             withContext(Dispatchers.Main) {
                 _courseListLiveData.value =
-                    _courseListLiveData.value?.map { if (it.id == course.id) it.copy(hasLike = !it.hasLike) else it }
+                    _courseListLiveData.value?.map {
+                        if (it.id == course.id)
+                            it.copy(hasLike = !course.hasLike)
+                        else it
+                    }
             }
+            addToFavoriteUseCase(course)
         }
     }
 }

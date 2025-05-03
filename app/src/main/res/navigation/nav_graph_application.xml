@@ -15,6 +15,9 @@
         android:name="com.smurzik.main.MainFragment"
         android:label="MainFragment">
         <deepLink app:uri="app://bottom_navigation" />
-
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.smurzik.login.presentation.LoginFragment"
+        android:label="LoginFragment" />
 </navigation>

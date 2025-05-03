@@ -18,6 +18,8 @@ class OnboardingFragment : Fragment() {
     private var _binding: OnboardingFragmentBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var sharedPrefHelper: SharedPrefHelper
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,7 +46,10 @@ class OnboardingFragment : Fragment() {
         setBlur(binding.main, binding.tag16)
         setBlur(binding.main, binding.tag17)
 
+        sharedPrefHelper = SharedPrefHelper(requireContext())
+
         binding.continueButton.setOnClickListener {
+            sharedPrefHelper.isOnboardingShown = true
             val request = NavDeepLinkRequest.Builder
                 .fromUri("app://login_fragment".toUri())
                 .build()
